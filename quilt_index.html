@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+		    html,body{
+		        display:flex;
+		        flex-wrap: wrap;
+		        height:100%;
+		        width:100%;
+		        padding-left:2%;
+		        padding-right:2%;
+		    }
+		    div{
+		        height:10%;
+		        width:9%;
+		        border: 1px solid black;
+		    }
+		</style>
+	</head>
+	<body>
+		<script>
+		    //add 100 divs to the canvas
+            //Step. 1 - create and append 100 div tags
+            // a. create a for loop (i < 100);
+            // b. In the loop create new div tag using .createElement
+            // c. append each new div to the parent (body)
+            //     aa.use document.body.appendChild(newDiv) do not grab the body tag
+            // Step. 2 - create an add event listner
+            // a. The element is div
+            // b. the event is onmouseover
+            // c. use function paint (use math.random to generate 4 random colors)
+            // Step. 3 - Set background color of div 
+            // a. set the element to this keyword
+            // b. use setAttribute to create the background color
+            function paint(){
+                const colors = ['#0000ff', '#ff0000', '#00cc00', '#ff9900']
+                const randomIndex = Math.floor(Math.random() * colors.length);
+                return colors[randomIndex];
+            }
+
+            for(var i = 0; i < 100; i++){
+                const div = document.createElement("div");
+                div.addEventListener("mouseover", function() {
+                    this.style.backgroundColor = paint();
+                });
+                document.body.appendChild(div);
+            }
+            
+            
+
+            
+                
+                
+            
+		    
+		    //write function paint 
+		</script>
+	</body>
+</html>
